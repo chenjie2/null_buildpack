@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+echo "---------> do nothing"
+
+
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
+
+echo "-----> Nothing to do."
+#BUILD_DIR=$1
+#CACHE_DIR=$2
+#mkdir -p $BUILD_DIR $CACHE_DIR
+
+
+#UAP_URL="http://pan.baidu.com/s/1sjuE0XJ"
+#JDK_URL="http://pan.baidu.com/s/1mgkFouc"
+
+# download UAP,openjdk
+#cd ${BUILD_DIR}
+echo "<===============download uap"
+#curl --silent --max-time 60 --location $UAP_URL | unzip 
+
+#if [ ! -d ./openjdk ]; then
+#  mkdir -p ./openjdk && cd ./openjdk
+  echo "<================download jdk"
+#  curl --silent --max-time 60 --location $JDK_URL | tar xz
+#fi
+
+#gen startup.sh
+#cd ${BUILD_DIR}
+
+#cat >>startup.sh <<EOF
+#NC_HOME=$PWD/UAP
+#JAVA_HOME=$PWD/openjdk
+#cd ${NC_HOME}
+#. ${NC_HOME}/bin/uapSetupCmdLine.sh
+#${JAVA_HOME}/bin/java -classpath ${NC_CLASSPATH} -Dhttp.port=${PORT} -Dnc.bs.logging.format=text -Dnc.server.location=${NC_HOME} nc.bs.mw.start.NCStarter
+#EOF
+
+#chmod +x startup.sh
+#chmod +x UAP/bin/*.sh
+
+echo "-----> Done with compile"
