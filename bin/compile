@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
-# bin/compile <build-dir> <cache-dir>
 
-echo "-----> Nothing to do."
-
+exit 0
