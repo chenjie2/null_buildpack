@@ -1,6 +1,22 @@
 #!/usr/bin/env bash
 
 echo "========> do nothing"
-echo "download UAP"
-echo "download openjdk"
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+mkdir -p $BUILD_DIR $CACHE_DIR
+
+UAP_URL="http://pan.baidu.com/s/1sjuE0XJ"
+JDK_URL="http://pan.baidu.com/s/1mgkFouc"
+
+# download UAP,openjdk
+cd ${BUILD_DIR}
+echo "<===============download uap"
+curl --silent --max-time 60 --location $UAP_URL | unzip 
+
+if [ ! -d ./openjdk ]; then
+  mkdir -p ./openjdk && cd ./openjdk
+  echo "<================download jdk"
+  curl --silent --max-time 60 --location $JDK_URL | tar xz
+fi
 exit 0
