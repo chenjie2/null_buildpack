@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
 echo "========> do nothing"
+echo "download UAP"
+echo "download openjdk"
 exit 0
