@@ -7,12 +7,12 @@ CACHE_DIR=$2
 mkdir -p $BUILD_DIR $CACHE_DIR
 
 UAP_URL="http://pan.baidu.com/s/1sjuE0XJ"
-JDK_URL="http://pan.baidu.com/s/1mgkFouc"
+JDK_URL="http://t1.dfs.kuaipan.cn/cdlsched/getdl?fid=243214312821227523&acc_params=entryid:243214312821227523,pickupCode:"
 
 # download UAP,openjdk
 cd ${BUILD_DIR}
 echo "<===============download uap"
-curl --silent --max-time 60 --location $UAP_URL | unzip 
+#curl --silent --max-time 60 --location $UAP_URL | unzip 
 
 if [ ! -d ./openjdk ]; then
   mkdir -p ./openjdk && cd ./openjdk
