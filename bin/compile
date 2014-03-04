@@ -12,12 +12,36 @@ JDK_URL="http://223.203.195.147/file/openjdk-1.6.0_22.tar.gz"
 # download UAP,openjdk
 cd ${BUILD_DIR}
 echo "<===============download uap"
+wget -q $UAP_URL
+unzip UAP.zip
+echo "<===============unzip UAP"
 #curl --silent --max-time 60 --location $UAP_URL | unzip 
 
 mkdir -p ./openjdk && cd ./openjdk
 echo "<================download jdk"
 #curl --silent --max-time 60 --location $JDK_URL
-wget  $JDK_URL
+wget -q $JDK_URL
 echo "<=================download successful"
-#tar -xzvf openjdk-1.6.0_22.tar.gz
+tar -xzvf openjdk-1.6.0_22.tar.gz
+echo "<===============unzip jdk"
+
+
+#gen startup.sh
+cd ${BUILD_DIR}
+
+cat >>startup.sh <<EOF
+NC_HOME=$PWD/UAP
+JAVA_HOME=$PWD/openjdk
+
+cd ${NC_HOME}
+
+. ${NC_HOME}/bin/uapSetupCmdLine.sh
+
+${JAVA_HOME}/bin/java -classpath ${NC_CLASSPATH} -Dhttp.port=${PORT} -Dnc.bs.logging.format=text -Dnc.server.location=${NC_HOME} nc.bs.mw.start.NCStarter
+EOF
+
+chmod +x startup.sh
+chmod +x UAP/bin/*.sh
+
+
 exit 0
