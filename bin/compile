@@ -41,7 +41,7 @@ ${JAVA_HOME}/bin/java -classpath ${NC_CLASSPATH} -Dhttp.port=${PORT} -Dnc.bs.log
 EOF
 
 chmod +x startup.sh
-#chmod +x UAP/bin/*.sh
+chmod +x UAP/bin/*.sh
 
 
 exit 0
