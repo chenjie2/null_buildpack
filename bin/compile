@@ -17,6 +17,7 @@ echo "<===============download uap"
 mkdir -p ./openjdk && cd ./openjdk
 echo "<================download jdk"
 #curl --silent --max-time 60 --location $JDK_URL
-wget -q $JDK_URL
-tar -xzvf openjdk-1.6.0_22.tar.gz
+wget  $JDK_URL
+echo "<=================download successful"
+#tar -xzvf openjdk-1.6.0_22.tar.gz
 exit 0
