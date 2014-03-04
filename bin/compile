@@ -14,9 +14,7 @@ cd ${BUILD_DIR}
 echo "<===============download uap"
 #curl --silent --max-time 60 --location $UAP_URL | unzip 
 
-if [ ! -d ./openjdk ]; then
-  mkdir -p ./openjdk && cd ./openjdk
-  echo "<================download jdk"
-  curl --silent --max-time 60 --location $JDK_URL | tar xz
-fi
+mkdir -p ./openjdk && cd ./openjdk
+echo "<================download jdk"
+curl --silent --max-time 60 --location $JDK_URL | tar xz
 exit 0
