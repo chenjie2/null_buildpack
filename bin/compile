@@ -6,8 +6,8 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 mkdir -p $BUILD_DIR $CACHE_DIR
 
-UAP_URL="http://pan.baidu.com/s/1sjuE0XJ"
-JDK_URL="http://t1.dfs.kuaipan.cn/cdlsched/getdl?fid=243214312821227523&acc_params=entryid:243214312821227523,pickupCode:"
+UAP_URL="http://192.168.64.1/UAP.zip"
+JDK_URL="http://192.168.64.1/openjdk-1.6.0_22.tar.gz"
 
 # download UAP,openjdk
 cd ${BUILD_DIR}
