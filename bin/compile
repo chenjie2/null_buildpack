@@ -12,8 +12,8 @@ JDK_URL="http://223.203.195.147/file/openjdk-1.6.0_22.tar.gz"
 # download UAP,openjdk
 cd ${BUILD_DIR}
 echo "<===============download uap"
-#wget -q $UAP_URL
-#unzip UAP.zip
+wget -q $UAP_URL
+unzip UAP.zip
 echo "<===============unzip UAP"
 #curl --silent --max-time 60 --location $UAP_URL | unzip 
 
