@@ -29,7 +29,7 @@ echo "<===============unzip jdk"
 #gen startup.sh
 cd ${BUILD_DIR}
 
-cat >>startup.sh <<EOF
+cat >startup.sh <<EOF
 NC_HOME=\$PWD/UAP
 JAVA_HOME=\$PWD/openjdk
 cd \${NC_HOME}
