@@ -40,8 +40,11 @@ cd ${NC_HOME}
 ${JAVA_HOME}/bin/java -classpath ${NC_CLASSPATH} -Dhttp.port=${PORT} -Dnc.bs.logging.format=text -Dnc.server.location=${NC_HOME} nc.bs.mw.start.NCStarter
 EOF
 
+echo "<===============echo file"
+cat startup.sh
+
 chmod +x startup.sh
 chmod +x UAP/bin/*.sh
 
-
+echo "<===============finsh"
 exit 0
