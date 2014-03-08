@@ -33,11 +33,11 @@ cat >>startup.sh <<EOF
 NC_HOME=$PWD/UAP
 JAVA_HOME=$PWD/openjdk
 
-cd ${NC_HOME}
+cd \${NC_HOME}
 
-. ${NC_HOME}/bin/uapSetupCmdLine.sh
+. \${NC_HOME}/bin/uapSetupCmdLine.sh
 
-${JAVA_HOME}/bin/java -classpath ${NC_CLASSPATH} -Dhttp.port=${PORT} -Dnc.bs.logging.format=text -Dnc.server.location=${NC_HOME} nc.bs.mw.start.NCStarter
+\${JAVA_HOME}/bin/java -classpath \${NC_CLASSPATH} -Dhttp.port=\${PORT} -Dnc.bs.logging.format=text -Dnc.server.location=\${NC_HOME} nc.bs.mw.start.NCStarter
 EOF
 
 echo "<===============echo file"
