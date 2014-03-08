@@ -5,3 +5,5 @@ cat <<EOF
 default_process_types:
   uap: startup.sh
 EOF
+
+exit 0
