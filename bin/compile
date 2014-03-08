@@ -6,23 +6,22 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 mkdir -p $BUILD_DIR $CACHE_DIR
 
-UAP_URL="http://192.168.1.100/UAP.zip"
-JDK_URL="http://192.168.1.100/openjdk-1.6.0_22.tar.gz"
+UAP_URL="http://192.168.1.100/UAP.tar.gz"
+JDK_URL="http://192.168.1.100/openjdk.tar.gz"
 
 # download UAP,openjdk
 cd ${BUILD_DIR}
 echo "<===============download uap"
 wget -q $UAP_URL
-unzip UAP.zip
+tar -xzvf UAP.tar.gz
 echo "<===============unzip UAP"
 #curl --silent --max-time 60 --location $UAP_URL | unzip 
 
-mkdir -p ./openjdk && cd ./openjdk
 echo "<================download jdk"
 #curl --silent --max-time 60 --location $JDK_URL
 wget -q $JDK_URL
 echo "<=================download successful"
-tar -xzvf openjdk-1.6.0_22.tar.gz
+tar -xzvf openjdk.tar.gz
 echo "<===============unzip jdk"
 
 
