@@ -6,8 +6,8 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 mkdir -p $BUILD_DIR $CACHE_DIR
 
-UAP_URL="http://192.168.1.100/UAP.tar.gz"
-JDK_URL="http://192.168.1.100/openjdk.tar.gz"
+UAP_URL="http://10.11.98.67/UAP.tar.gz"
+JDK_URL="http://10.11.98.67/openjdk.tar.gz"
 
 # download UAP,openjdk
 cd ${BUILD_DIR}
