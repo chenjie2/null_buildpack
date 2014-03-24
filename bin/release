@@ -4,10 +4,8 @@ BUILD_DIR="$1"
 
 cat <<EOF
 ---
-config_vars:
-  PATH: "/usr/local/bin:/usr/bin:/bin:${BUILD_DIR}"
 default_process_types:
-  uap: startup.sh
+  uap: ./startup.sh
 EOF
 
 exit 0
