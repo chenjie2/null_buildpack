@@ -29,6 +29,7 @@ echo "<===============unzip jdk"
 cd ${BUILD_DIR}
 
 cat >startup.sh <<EOF
+\#\!\/usr\/bin\/env bash
 NC_HOME=\$PWD/UAP
 JAVA_HOME=\$PWD/openjdk
 sed -i "s/<port>[0-9]*<\/port>/<port>\${PORT}<\/port>/g" \${NC_HOME}/ierp/bin/prop.xml
