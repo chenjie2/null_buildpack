@@ -33,8 +33,10 @@ NC_HOME=\$PWD/UAP
 JAVA_HOME=\$PWD/openjdk
 sed -i "s/<port>[0-9]*<\/port>/<port>\${PORT}<\/port>/g" \${NC_HOME}/ierp/bin/prop.xml
 cd \${NC_HOME}
+touch startup.log
 . \${NC_HOME}/bin/uapSetupCmdLine.sh
-\${JAVA_HOME}/bin/java -classpath \${NC_CLASSPATH} -Dhttp.port=\${PORT} -Dnc.bs.logging.format=text -Dnc.server.location=\${NC_HOME} nc.bs.mw.start.NCStarter
+nohup \${JAVA_HOME}/bin/java -classpath \${NC_CLASSPATH} -Dhttp.port=\${PORT} -Dnc.bs.logging.format=text -Dnc.server.location=\${NC_HOME} nc.bs.mw.start.NCStarter >startup.log 2>&1 &
+exit 0
 EOF
 
 echo "<===============echo file"
