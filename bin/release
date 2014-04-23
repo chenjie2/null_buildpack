@@ -5,7 +5,7 @@ BUILD_DIR="$1"
 cat <<EOF
 ---
 default_process_types:
-  uap: ./startup.sh
+  web: ./startup.sh
 EOF
 
 exit 0
