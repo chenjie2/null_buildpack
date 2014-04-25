@@ -2,49 +2,19 @@
 
 echo "========> do nothing"
 
+
+echo `pwd`
+echo `ls`
+
 BUILD_DIR=$1
 CACHE_DIR=$2
-mkdir -p $BUILD_DIR $CACHE_DIR
+echo $BUILD_DIR
+echo $CACHE_DIR
 
-UAP_URL="http://10.11.98.67/UAP.tar.gz"
-JDK_URL="http://10.11.98.67/openjdk.tar.gz"
-
-# download UAP,openjdk
-cd ${BUILD_DIR}
-echo "<===============download uap"
-wget -q $UAP_URL
-tar -xzvf UAP.tar.gz
-echo "<===============unzip UAP"
-#curl --silent --max-time 60 --location $UAP_URL | unzip 
-
-echo "<================download jdk"
-#curl --silent --max-time 60 --location $JDK_URL
-wget -q $JDK_URL
-echo "<=================download successful"
-tar -xzvf openjdk.tar.gz
-echo "<===============unzip jdk"
+echo `ls $BUILD_DIR/*`
+echo `ls $CACHE_DIR/*`
 
 
-#gen startup.sh
-cd ${BUILD_DIR}
-
-cat >startup.sh <<EOF
-#!/usr/bin/env bash
-NC_HOME=\$PWD/UAP
-JAVA_HOME=\$PWD/openjdk
-sed -i "s/<port>[0-9]*<\/port>/<port>\${PORT}<\/port>/g" \${NC_HOME}/ierp/bin/prop.xml
-cd \${NC_HOME}
-touch startup.log
-. \${NC_HOME}/bin/uapSetupCmdLine.sh
-nohup \${JAVA_HOME}/bin/java -classpath \${NC_CLASSPATH} -Dhttp.port=\${PORT} -Dnc.bs.logging.format=text -Dnc.server.location=\${NC_HOME} nc.bs.mw.start.NCStarter >startup.log 2>&1 &
-exit 0
-EOF
-
-echo "<===============echo file"
-cat startup.sh
-
-chmod +x startup.sh
-chmod +x UAP/bin/*.sh
 
 echo "<===============finsh"
 exit 0
