@@ -21,9 +21,11 @@ tar -zxvf apache-tomcat-6.0.39.tar.gz
 
 echo `ls $BUILD_DIR/*`
 
-wget -q http://download.run.pivotal.io/openjdk/lucid/x86_64/openjdk-1.7.0_51.tar.gz
+wget http://download.run.pivotal.io/openjdk/lucid/x86_64/openjdk-1.7.0_51.tar.gz
 mkdir -p openjdk
-tar -zxvf openjdk-1.7.0_51.tar.gz openjdk
+mv openjdk-1.7.0_51.tar.gz openjdk
+cd openjdk
+tar -zxvf openjdk-1.7.0_51.tar.gz
 
 
 echo "<===============finsh"
