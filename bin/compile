@@ -17,6 +17,7 @@ echo `ls $CACHE_DIR/*`
 
 echo "<============unzip tomcat"
 cd $BUILD_DIR
+wget http://download.run.pivotal.io/tomcat/tomcat-6.0.33.tar.gz
 tar -zxvf apache-tomcat-6.0.39.tar.gz 
 
 echo `ls $BUILD_DIR/*`
