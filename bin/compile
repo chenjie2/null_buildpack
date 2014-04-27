@@ -15,6 +15,11 @@ echo $CACHE_DIR
 echo `ls $BUILD_DIR/*`
 echo `ls $CACHE_DIR/*`
 
+echo "<============unzip tomcat"
+cd $BUILD_DIR
+tar -zxvf apache-tomcat-6.0.39.tar.gz 
+
+echo `ls $BUILD_DIR/*`
 
 echo "<===============finsh"
 exit 0
