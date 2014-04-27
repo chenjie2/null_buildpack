@@ -29,5 +29,6 @@ cd openjdk
 tar -zxvf openjdk-1.7.0_51.tar.gz
 
 
+
 echo "<===============finsh"
 exit 0
