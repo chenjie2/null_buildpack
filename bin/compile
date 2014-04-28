@@ -2,15 +2,15 @@
 
 echo "========> do nothing"
 
-
-
-echo `pwd`
-echo `ls`
-
+BUILDPACK_DIR=$(cd $(dirname $0)/.. ; pwd)
 BUILD_DIR=$1
 CACHE_DIR=$2
-echo $BUILD_DIR
-echo $CACHE_DIR
+
+echo "-----> Assembling Tomcat App."
+echo " Working dir = $(pwd)"
+echo " Build dir = $BUILD_DIR"
+echo " Cache dir = $CACHE_DIR"
+echo " Buildpack dir = $BUILDPACK_DIR"
 
 echo `ls $BUILD_DIR/*`
 echo `ls $CACHE_DIR/*`
