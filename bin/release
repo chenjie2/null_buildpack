@@ -8,7 +8,7 @@ config_vars:
   PATH: /app/openjdk/bin:/usr/local/bin:/usr/bin:/bin
   JAVA_OPTS: -Xmx256m -XX:+UseCompressedOops
 default_process_types:
-  web: ./startup.sh
+  web:	apache-tomcat-6.0.33/bin/run_tomcat.sh
 EOF
 
 exit 0
