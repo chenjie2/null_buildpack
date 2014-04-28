@@ -19,7 +19,7 @@ echo "<============download tomcat"
 cd $BUILD_DIR
 wget -q http://download.run.pivotal.io/tomcat/tomcat-6.0.33.tar.gz
 echo "<============unzip tomcat"
-tar -zxf apache-tomcat-6.0.33.tar.gz 
+tar -zxf tomcat-6.0.33.tar.gz
 
 
 echo "<============download openjdk"
