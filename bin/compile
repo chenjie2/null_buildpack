@@ -2,7 +2,7 @@
 
 echo "========> do nothing"
 
-BUILDPACK_DIR=$(cd $(dirname $0)/.. ; pwd)
+BUILDPACKR_DI=$(cd $(dirname $0)/.. ; pwd)
 BUILD_DIR=$1
 CACHE_DIR=$2
 
@@ -33,7 +33,13 @@ tar -zxf openjdk-1.7.0_51.tar.gz
 
 echo `ls $BUILD_DIR/*`
 
-
+echo "<============mod server.xml"
+cd $BUILD_DIR
+mv apache-tomcat-6.0.33/conf/server.xml apache-tomcat-6.0.33/conf/server.xml.bak
+cp $BUILDPACK_DIR/server.xml apache-tomcat-6.0.33/conf/
+cat apache-tomcat-6.0.33/conf/server.xml
+cp $BUILDPACK_DIR/run_tomcat.sh apache-tomcat-6.0.33/bin/
+chmod +x apache-tomcat-6.0.33/bin/run_tomcat.sh
 
 echo "<===============finsh"
 exit 0
