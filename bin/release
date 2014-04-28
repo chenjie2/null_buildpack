@@ -4,6 +4,8 @@ BUILD_DIR="$1"
 
 cat <<EOF
 ---
+config_vars:
+  JAVA_OPTS: -Xmx256m
 default_process_types:
   web:	apache-tomcat-6.0.33/bin/run_tomcat.sh
 EOF
