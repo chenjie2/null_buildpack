@@ -18,7 +18,7 @@ echo `ls $CACHE_DIR/*`
 echo "<============unzip tomcat"
 cd $BUILD_DIR
 wget http://download.run.pivotal.io/tomcat/tomcat-6.0.33.tar.gz
-tar -zxvf apache-tomcat-6.0.39.tar.gz 
+tar -zxf apache-tomcat-6.0.39.tar.gz 
 
 
 
@@ -28,7 +28,7 @@ wget http://download.run.pivotal.io/openjdk/lucid/x86_64/openjdk-1.7.0_51.tar.gz
 mkdir -p openjdk
 mv openjdk-1.7.0_51.tar.gz openjdk
 cd openjdk
-tar -zxvf openjdk-1.7.0_51.tar.gz
+tar -zxf openjdk-1.7.0_51.tar.gz
 
 
 
