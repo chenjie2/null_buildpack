@@ -4,6 +4,9 @@ BUILD_DIR="$1"
 
 cat <<EOF
 ---
+config_vars:
+  PATH: /app/openjdk/bin:/usr/local/bin:/usr/bin:/bin
+  JAVA_OPTS: -Xmx256m -XX:+UseCompressedOops
 default_process_types:
   web: ./startup.sh
 EOF
