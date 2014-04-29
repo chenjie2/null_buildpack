@@ -15,33 +15,48 @@ echo " Buildpack dir = $BUILDPACK_DIR"
 echo `ls $BUILD_DIR/*`
 echo `ls $CACHE_DIR/*`
 
-echo "<============download tomcat"
+
 cd $BUILD_DIR
-wget -q http://download.run.pivotal.io/tomcat/tomcat-6.0.33.tar.gz
-echo "<============unzip tomcat"
-tar -zxf tomcat-6.0.33.tar.gz
+
+echo "<============download tomcat"
+#wget -q http://20.2.60.132/image/tomcat-6.0.33.tar.gz
+#echo "<============unzip tomcat"
+#tar -zxf tomcat-6.0.33.tar.gz
 
 
 echo "<============download openjdk"
 
-wget -q http://download.run.pivotal.io/openjdk/lucid/x86_64/openjdk-1.7.0_51.tar.gz
+wget -q http://20.2.60.132/image/openjdk-1.7.0_51.tar.gz
 echo "<============unzip openjdk"
 mkdir -p openjdk
 mv openjdk-1.7.0_51.tar.gz openjdk
 cd openjdk
 tar -zxf openjdk-1.7.0_51.tar.gz
 
+cd $BUILD_DIR
+echo "<============download UAP"
+wget -q http://20.2.60.132/image/UAP.tar.gz
+echo "<============unzip UAP"
+tar -zxf UAP.tar.gz
+rm -rf UAP.tar.gz
+rm -rf openjdk/openjdk-1.7.0_51.tar.gz
+
+cp $BUILDPACK_DIR/run_uap.sh $BUILD_DIR/run_uap.sh
+chmod +x $BUILD_DIR/run_uap.sh
+rm -rf $BUILD_DIR/UAP/startup.sh
+cp $BUILDPACK_DIR/startup.sh $BUILD_DIR/UAP/startup.sh
+chmod +x $BUILD_DIR/UAP/startup.sh
+#cat $BUILD_DIR/run_uap.sh
+
 echo `ls $BUILD_DIR/*`
 
-echo "<============mod server.xml"
-cd $BUILD_DIR
-echo `ls $BUILD_DIR/apache-tomcat-6.0.33/*`
-echo `ls $BUILD_DIR/apache-tomcat-6.0.33/conf/*`
-mv $BUILD_DIR/apache-tomcat-6.0.33/conf/server.xml $BUILD_DIR/apache-tomcat-6.0.33/conf/server.xml.bak
-cp $BUILDPACK_DIR/server.xml $BUILD_DIR/apache-tomcat-6.0.33/conf/
-cat $BUILD_DIR/apache-tomcat-6.0.33/conf/server.xml
-cp $BUILDPACK_DIR/run_tomcat.sh $BUILD_DIR/apache-tomcat-6.0.33/bin/
-chmod +x $BUILD_DIR/apache-tomcat-6.0.33/bin/run_tomcat.sh
+#echo "<============mod server.xml"
+#cd $BUILD_DIR
+#mv $BUILD_DIR/apache-tomcat-6.0.33/conf/server.xml $BUILD_DIR/apache-tomcat-6.0.33/conf/server.xml.bak
+#cp $BUILDPACK_DIR/server.xml $BUILD_DIR/apache-tomcat-6.0.33/conf/
+#cat $BUILD_DIR/apache-tomcat-6.0.33/conf/server.xml
+#cp $BUILDPACK_DIR/run_tomcat.sh $BUILD_DIR/apache-tomcat-6.0.33/bin/
+#chmod +x $BUILD_DIR/apache-tomcat-6.0.33/bin/run_tomcat.sh
 
 echo "<===============finsh"
 exit 0
